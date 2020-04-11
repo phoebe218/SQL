@@ -1,0 +1,14 @@
+SELECT 
+    userid
+    ,category
+    ,row_num
+FROM
+    (
+    SELECT 
+        userid
+        ,category
+        ,ROW_NUMBER() OVER (PARTITION BY  category ORDER BY RANDOM() ) AS row_num
+    FROM datademo
+    )
+WHERE 
+    row_num <= 50
