@@ -41,4 +41,4 @@ left join first_user fu on fu.shopid = pa.shopid
 left join final on final.shopid = pa.shopid and pa.month = final.month
 where pa.month between current_date - interval '9' month and current_date 
 group by 1,2
-order by 1 desc
+order by 1,2 desc
